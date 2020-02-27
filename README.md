@@ -2,5 +2,7 @@
 
 För att köra: 
 
-cd angular-shirt-app
+```shell
+cd angular-shirt-store
 ng serve
+```
