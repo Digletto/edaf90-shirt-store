@@ -3,6 +3,6 @@
 För att köra: 
 
 ```shell
-cd angular-shirt-store
+cd angular-shirt-app
 ng serve
 ```
