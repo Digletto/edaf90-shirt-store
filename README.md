@@ -6,3 +6,10 @@ För att köra:
 cd angular-shirt-app
 ng serve
 ```
+
+För att använda routing:
+```shell
+Öppna app-rounting.module.ts
+lägg till sidan du vill dirigeras till i konstanten routes
+Använt modellen -> { path: 'Path-Name', component: Componenten },
+```
