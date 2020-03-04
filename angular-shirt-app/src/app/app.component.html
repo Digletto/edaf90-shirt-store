@@ -2,39 +2,29 @@
 </div>
 
 <div class="content" role="main">
-	<span>{{ title }} app is running!</span>
 
-	<!-- Next Steps -->
-	<h2>Next Steps</h2>
-	<p>What do you want to do next with your app?</p>
-
-	<input type="hidden" #selection>
-
-	<div class="card-container">
-		<div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-			<span>New Component</span>
+	<header>
+		<div class="container">
+			<img src="assets/logo.png" alt="logo" class="logo">
+	
+	
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Checkout</a></li>
+					<li><a href="#">Shop</a></li>
+					<li><a href="#">Previous orders</a></li>
+				</ul>
+			</nav>
+	
 		</div>
+	</header>
 
-		<div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
-			<span>Angular Material</span>
+	<body>
+		<div class="container">
+			<img src="assets/t-shirt.png" alt="t-shirt" class="t-shirt">
 		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<div ngbDropdown class="d-inline-block">
-				<button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-				<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-					<button ngbDropdownItem>Action - 1</button>
-					<button ngbDropdownItem>Another Action</button>
-					<button ngbDropdownItem>Something else is here</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<form>
-		<input type="button" value="asdf"/>
-	</form>
+	</body>
 
 	<!-- Terminal -->
 	<div class="terminal" [ngSwitch]="selection.value">
@@ -42,10 +32,6 @@
 		<pre *ngSwitchCase="'material'">ng add @angular/material</pre>
 	</div>
 
-	<!-- Footer -->
-	<footer>
-		<p>Herp derp</p>
-	</footer>
 </div>
 
 <router-outlet></router-outlet>
