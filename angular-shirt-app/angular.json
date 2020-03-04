@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "angular-shirt-app": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-shirt-app"
+    }
+  },
+  "defaultProject": "angular-shirt-app",
+  "cli": {
+    "analytics": "2fd5b8d0-6375-4305-88a6-ca350b28965f"
+  }
 }
