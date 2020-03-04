@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+body {
+	margin: 0;
+	background: #ffffff;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
 header {
     background: #f8fae4;
 }
@@ -36,10 +49,11 @@ nav li{
 }
 
 nav a{
-    color: #444;
+    color: #658361;
     text-decoration: none;
-    text-transform: uppercase;
     font-size: 14px;
+    font-family: "Cutive Mono";
+    font-style: normal;
 }
 
 nav a:hover{
