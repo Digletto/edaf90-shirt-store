@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-previousorder',
-    templateUrl: './previousorder.component.html',
-    styleUrls: ['./previousorder.component.css']
+    templateUrl: './previousOrder.component.html',
+    styleUrls: ['./previousOrder.component.css']
   })
 
   export class PreviousorderComponent{
