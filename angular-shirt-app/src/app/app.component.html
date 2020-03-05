@@ -2,12 +2,9 @@
 </div>
 
 <div class="content" role="main">
-
 	<header>
 		<div class="container">
 			<img src="assets/logo.png" alt="logo" class="logo">
-	
-	
 			<nav>
 				<ul>
 					<li><a routerLink = '/appcomponent'>Home</a></li>
@@ -22,22 +19,12 @@
 
 	<body>
 		<div>
-
 			<div class="container">
 				<img src="assets/t-shirt.png" alt="t-shirt" class="t-shirt">
 			</div>
-
-
 		</div>
 		
 	</body>
-
-	<!-- Terminal -->
-	<div class="terminal" [ngSwitch]="selection.value">
-		<pre *ngSwitchDefault>ng generate component xyz</pre>
-		<pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-	</div>
-
 </div>
 
 <router-outlet></router-outlet>
