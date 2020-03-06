@@ -5,7 +5,9 @@
 	<div class="content" role="main">
 		<header>
 			<div class="container">
-				<img src="assets/logo.png" alt="logo" class="logo" routerLink = '/appcomponent'>
+				<a routerLink='/'>
+					<img src="assets/logo.png" alt="logo" class="logo">
+				</a>
 				<nav>
 					<ul>
 						<li><a routerLink = '/checkout'>Checkout</a></li>
@@ -17,23 +19,10 @@
 			</div>
 		</header>
 
-	
-			<div>
-				<div class="container">
-						<div class="s1">
-							Make you own T-shirt
-							<div class="s2">
-								Design with you own slogan
-								<div class="s3">
-									<img src="assets/t-shirt.png" alt="t-shirt" class="t-shirt">
-								</div>
-							</div>
-						</div>
-					</div>
-					
+		<div>
+			<div class="container">
+				<router-outlet></router-outlet>
 			</div>
-		
-	
+		</div>
 	</div>
 </body>
-<router-outlet></router-outlet>
