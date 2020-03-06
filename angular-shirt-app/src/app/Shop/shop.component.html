@@ -1,1 +1,57 @@
-asdf
+
+
+<div>
+
+
+
+    <div class="container">
+
+        <div class="jumbotron text-center bg-white">
+            <h1>Lets make some beutiful t-shirts</h1>
+            <br>
+            <p class="font-italic"> Customize with your own favorite wiktionary content</p>
+
+
+        </div>
+
+        <div class="well well-lg border bg-light p-5 m-1" >
+
+            
+                
+              <div class="d-inline p-3">
+                <img
+                  id="shirt"
+                  src={{selectedShirt}}
+                  alt="unable to show t-shirt"
+                  width="30%"
+                  height="30%"
+                  class="img-thumbnail"
+                />
+
+                
+              </div>
+
+              <select
+              class="form-control d-inline w-auto"
+              (change)="onChange($event)"
+            >
+              
+              <option Selected value={{white}}>White</option>
+              <option value={{black}}>Black</option>
+              <option value={{green}}>Green</option>
+              <option value={{blue}}>Blue</option>
+              <option value={{yellow}}>Yellow</option>
+              <option value={{red}}>Red</option>
+            </select>
+
+            
+        </div>
+    </div>
+
+ 
+
+
+</div>
+
+
+
