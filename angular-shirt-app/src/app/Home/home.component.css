@@ -13,3 +13,10 @@
 .s3{
     margin-top: 100px;
 }
+
+.t-shirt{
+    float: center;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 150px;
+}

@@ -78,9 +78,3 @@ nav a:hover::before{
     width: 100%;
 }
 
-.t-shirt{
-    float: center;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 150px;
-}
