@@ -48,4 +48,12 @@ import {Order} from '../models/Order';
         }
       ]
     }
+    shirtFiles : {[key: string]: string} = {
+      black : "../../assets/t-shirt-pictures/black_shirt.jpg",
+      blue : "../../assets/t-shirt-pictures/blue_shirt.jpg",
+      green : "../../assets/t-shirt-pictures/green_shirt.jpg",
+      white : "../../assets/t-shirt-pictures/white_shirt.jpg",
+      yellow : "../../assets/t-shirt-pictures/yellow_shirt.jpg",
+      red : "../../assets/t-shirt-pictures/red_shirt.jpg"       
   }
+}
