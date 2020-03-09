@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { HomeComponent } from './Home/home.component';
 import { CheckoutComponent } from './Checkout/checkout.component';
 import { PreviousorderComponent } from './PreviousOrder/previousOrder.component'
@@ -16,7 +15,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [
+    RouterModule.forRoot(routes, { enableTracing: true })
+  ],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }

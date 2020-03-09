@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="./previousOrder.component.css">
+</head>
+
+<div>
+    <div class="container">
+        <div class="jumbotron text-center bg-white">
+            <h1> Here you can see your previous orders </h1>
+        </div>
+    </div>
+</div>
+<div>
+    <ul *ngFor="let order of orders">
+        <div class="well well-lg border bg-light p-3 m-1" >
+            <h1 style="text-align:center"> Order Number: {{order.id}}</h1>
+            <ul *ngFor="let shirt of order.shirts">
+                Color: <span class=thin>{{shirt.color}}</span><br>
+                Size: <span class=thin>{{shirt.size}}</span><br>
+                text: <br> <span class=thin style="white-space: pre-line">{{shirt.text}}</span><br>
+                Price: <span class=thin>{{shirt.cost}}</span><br>
+                <hr>
+            </ul>
+            <ul>
+                Total cost: <span class=thin>{{order.totalcost}}</span><br>
+            </ul>
+            <br>
+        </div>
+    </ul>
+</div>
