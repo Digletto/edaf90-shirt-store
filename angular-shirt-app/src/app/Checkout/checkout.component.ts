@@ -48,8 +48,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
         red : "../../assets/t-shirt-pictures/red_shirt.jpg"       
     }
 
-    onPayClick() {
-        this.modalService.open("Processing Your Payment...");
+    onPayClick(content) {
+        this.modalService.open(content);
     }
 
     updatePrice() {
@@ -63,7 +63,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
     ngOnInit() {
         //this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
-
         //temp for testing
         this.tshirts = [this.exampleItem, this.exampleItem2];
 

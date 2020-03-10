@@ -32,5 +32,53 @@
     <ul>
         Total: <span class=thin>{{total}}</span>:-<br>
     </ul>
-    <button (click)="onPayClick()">Pay!</button>
+    <button (click)="onPayClick(payformModal)">Pay!</button>
 </div>
+
+<ng-template #payformModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Enter Credentials</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+        <div>
+            <label>Name</label>
+            <input type="text" id="fname" required placeholder="First Name">
+            <input type="text" id="lname" required placeholder="Last Name">
+        </div>
+        <div>
+            <label>E-mail</label>
+            <input type="text" id="email" required>
+        </div>
+        <div>
+            <label>Address: </label>
+            <div>
+                <div>
+                    <label>Street</label>
+                    <input type="text" id="street" required>
+                </div>
+                <div>
+                    <label>Nbr</label>
+                    <input type="text" id="streetnbr" required>
+                </div>
+                <div>
+                    <label>Country</label>
+                    <input type="text" id="country" required>
+                </div>
+                <div>
+                    <label>City</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div>
+                    <label>Area Code</label>
+                    <input type="text" id="acode" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+</ng-template>
