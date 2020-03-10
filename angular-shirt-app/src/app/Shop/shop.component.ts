@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
-
-
- 
+import { WiktionarySearchComponent } from '../wiktionary-search/wiktionary-search.component';
 
 
 @Component({
     selector: 'app-shop',
     templateUrl: './shop.component.html',
-    styleUrls: ['./shop.component.css']
+    styleUrls: ['./shop.component.css'],
+    entryComponents: [
+      WiktionarySearchComponent
+    ]
   })
 
   export class Shop implements OnInit{
@@ -20,7 +21,7 @@ import { JsonPipe } from '@angular/common';
     white : String = "../../assets/t-shirt-pictures/white_shirt.jpg";
     yellow : String = "../../assets/t-shirt-pictures/yellow_shirt.jpg";
     red : String = "../../assets/t-shirt-pictures/red_shirt.jpg";
-    
+
     selectedShirt: String = this.white;
 
     tshirts;
@@ -60,9 +61,7 @@ import { JsonPipe } from '@angular/common';
       console.log(this.tshirts)
 
   }
-    
 
 
 
-      
-  }
+}

@@ -1,0 +1,14 @@
+<form class="card card-body bg-light">
+	<div class="form-group row justify-content-between">
+		<label for="wiktionary-search-field" class="col-md-2 col-form-label text-right">Search term</label>
+		<input type="text" id="wiktionary-search-field" class="form-control col-md-7">
+		<input type="submit" class="btn btn-primary col-md-2">
+	</div>
+	<div id="results">
+                <ul>
+                        <li *ngFor="let definition of definitions | keyvalue">
+                                {{ definition.key }}
+                        </li>
+                </ul>
+	</div>
+</form>
