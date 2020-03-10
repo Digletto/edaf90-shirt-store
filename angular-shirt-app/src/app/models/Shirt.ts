@@ -5,5 +5,6 @@ export class Shirt {
     form:string;
     def:string;
     quantity:number;
+    //the cost is per shirt no matter the quantity
     cost:number;
 }

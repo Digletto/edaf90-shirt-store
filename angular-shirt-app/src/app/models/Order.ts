@@ -6,7 +6,7 @@ import { Id } from '../id';
 function calculateCost(shirts:Shirt[]) {
     let cost = 0;
     shirts.forEach(shirt => {
-        cost = cost + shirt.cost;
+        cost = cost + shirt.cost*shirt.quantity;
     });
     return cost;
 }
@@ -35,5 +35,17 @@ export class Order implements OnInit{
     }
     onChange(event: any) {
         this.totalcost = calculateCost(this.shirts);
+    }
+    changeQuantity(shirtIndex:number, quantity:number) {
+        this.shirts[shirtIndex].quantity = quantity;
+    }
+    addToQuantity(shirtIndex:number) {
+        this.shirts[shirtIndex].quantity++;
+    }
+    RemoveFromQuantity(shirtIndex:number) {
+        this.shirts[shirtIndex].quantity--;
+        if (this.shirts[shirtIndex].quantity === 0) {
+            this.shirts.splice(shirtIndex,1)
+        }
     }
 }
