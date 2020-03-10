@@ -8,6 +8,8 @@ import { PreviousorderComponent } from './PreviousOrder/previousOrder.component'
 import { HomeComponent } from './Home/home.component';
 import { CheckoutComponent } from './Checkout/checkout.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,4 +25,20 @@ import { CheckoutComponent } from './Checkout/checkout.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{ 
+
+  constructor() {
+
+
+    localStorage.setItem("tshirts", JSON.stringify([]))
+    localStorage.setItem("orders", JSON.stringify([]))
+
+
+  }
+
+
+
+
+
+
+}
