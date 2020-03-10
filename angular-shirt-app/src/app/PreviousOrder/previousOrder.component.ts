@@ -9,12 +9,44 @@ import {Order} from '../models/Order';
   })
 
   export class PreviousorderComponent implements OnInit{
-    orders:Order[]
+    orders:Order[];
 
     constructor() { }
 
     ngOnInit() {
       //for testing, should later be localstorage
+      let order1 = new Order([
+        {
+          size: 'XL',
+          color: 'blue',
+          word: 'pain',
+          form: 'noun',
+          def: 'What comes from doing this assingment',
+          quantity: 1,
+          cost: 3
+        }
+      ], "daniel<3pesto@gmail.com", "Kämnärsvägen", "lund", "37", "Sweden");
+      let order2 = new Order([{
+        size: 'S',
+        color: 'black',
+        word: 'pain',
+        form: 'noun',
+        def: 'What comes from doing this assingment',
+        quantity: 1,
+        cost: 3
+      },
+      {
+        size: 'M',
+        color: 'green',
+        word: 'pain',
+        form: 'noun',
+        def: 'What comes from doing this assingment',
+        quantity: 1,
+        cost: 3
+      }], "daniel<3pesto@gmail.com", "Kämnärsvägen", "lund", "37", "Sweden");
+      this.orders = [order1, order2];
+
+      /*
       this.orders = [
         {
           id: 1,
@@ -22,10 +54,18 @@ import {Order} from '../models/Order';
             {
               size: 'XL',
               color: 'blue',
-              text: "pain (countable and uncountable, plural pains) \n 1. What comes from doing this assignment",
+              word: 'pain',
+              form: 'noun',
+              def: 'What comes from doing this assingment',
+              quantity: 1,
               cost: 3
             }
           ],
+          email: "daniel<3pesto@gmail.com",
+          address: "Kämnärsvägen",
+          postalnr: "37",
+          city: "Lund",
+          country: "Sweden",
           totalcost: 3
         },
         {
@@ -34,19 +74,31 @@ import {Order} from '../models/Order';
             {
               size: 'S',
               color: 'black',
-              text: "pain (countable and uncountable, plural pains) \n 1. What comes from doing this assignment",
+              word: 'pain',
+              form: 'noun',
+              def: 'What comes from doing this assingment',
+              quantity: 1,
               cost: 3
             },
             {
               size: 'M',
               color: 'green',
-              text: "pain (countable and uncountable, plural pains) \n 1. What comes from doing this assignment",
+              word: 'pain',
+              form: 'noun',
+              def: 'What comes from doing this assingment',
+              quantity: 1,
               cost: 3
             }
           ],
+          email: "daniel<3pesto@gmail.com",
+          address: "Kämnärsvägen",
+          postalnr: "37",
+          city: "Lund",
+          country: "Sweden",
           totalcost: 6
         }
       ]
+      **/
     }
     shirtFiles : {[key: string]: string} = {
       black : "../../assets/t-shirt-pictures/black_shirt.jpg",
