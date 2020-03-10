@@ -34,10 +34,12 @@ import { WiktionarySearchComponent } from './wiktionary-search/wiktionary-search
 export class AppModule{ 
 
   constructor() {
-
-
     localStorage.setItem("tshirts", JSON.stringify([]))
+
+
+
     localStorage.setItem("orders", JSON.stringify([]))
+
 
 
   }
