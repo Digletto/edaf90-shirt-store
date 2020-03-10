@@ -12,21 +12,15 @@ import { JsonPipe } from '@angular/common';
   })
 
   export class Shop implements OnInit{
-
-
-    black : String = "../../assets/t-shirt-pictures/black_shirt.jpg";
-    blue : String = "../../assets/t-shirt-pictures/blue_shirt.jpg";
-    green : String = "../../assets/t-shirt-pictures/green_shirt.jpg";
-    white : String = "../../assets/t-shirt-pictures/white_shirt.jpg";
-    yellow : String = "../../assets/t-shirt-pictures/yellow_shirt.jpg";
-    red : String = "../../assets/t-shirt-pictures/red_shirt.jpg";
     
-    selectedShirt: String = this.white;
+    
+    
+    selectedShirt: String = "white";
 
     tshirts;
 
     SelectedItem : {[key: string]: String} = {
-      color:  this.white,
+      color:  "white",
       word: "",
       form: "",
       def: ""
@@ -36,16 +30,24 @@ import { JsonPipe } from '@angular/common';
 
     }
 
+
+    
+
     ngOnInit() {
 
 
     }
 
 
+
+    
+
+
     onChange(event: any) {
       this.selectedShirt=event.target.value;
       this.SelectedItem= {
-        color:  this.selectedShirt
+        color: this.selectedShirt
+
       }
 
 
