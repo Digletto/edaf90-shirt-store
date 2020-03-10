@@ -6,20 +6,31 @@
             <p>Welcome to the checkout. Please edit your order and proceed to payment. </p>
         </div>
 
-        <div class="well well-sm border bg-light p-2 m-1" >
-            <div>
-
-            {{exampleItem.color}} t-shirt, '{{exampleItem.word}}', '<i>{{exampleItem.form}}</i>', "{{exampleItem.def}}"  
-            <img
-                id="shirt"
-                src={{shirtFiles[exampleItem.color]}}
-                alt="unable to show t-shirt"
-                width="5%"
-                height="5%"
-                class="img-thumbnail"
-            />
+        <div class="orderItems" *ngFor="let shirt of tshirts; let i=index">
+            <div class="well well-sm border bg-light p-2 m-1" >
+                <div>
+                <img
+                    id={{i}}
+                    src="../../assets/t-shirt-pictures/{{shirt.color}}_shirt.jpg"
+                    alt="unable to show t-shirt"
+                    width="10%"
+                    height="10%"
+                    class="img-thumbnail"
+                />
+                <br>
+                Color: <span class=thin>{{shirt.color}}</span>&nbsp;&nbsp;&nbsp;
+                <br>
+                Size: <span class=thin>{{shirt.size}}</span><br>
+                Word: <span class=thin style="white-space: pre-line"><i>{{shirt.word}}</i></span><br>
+                Form: <span class=thin style="white-space: pre-line"><i>{{shirt.form}}</i></span><br>
+                Def: <span class=thin style="white-space: pre-line"><i>{{shirt.def}}</i></span><br>
+                Price: <span class=thin>{{shirt.cost}}:-</span><br>
+                </div>
             </div>
         </div>
     </div>
+    <ul>
+        Total: <span class=thin>{{total}}</span>:-<br>
+    </ul>
     <button (click)="onPayClick()">Pay!</button>
 </div>
