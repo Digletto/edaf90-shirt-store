@@ -8,12 +8,14 @@ import { WiktionarySearchService } from '../wiktionary-search.service';
 })
 export class WiktionarySearchComponent implements OnInit {
   langs = {
-    'Svenska': 'sv',
     'English': 'en',
   };
-  defaultOption = "English";
-  lang: "en";
-  definitions: Object;
+
+  lang = "en";
+  term: string;
+  selectedDefinition: string;
+
+  definitions: [];
   submitted = false;
 
   constructor(private searchService: WiktionarySearchService) { }
@@ -23,11 +25,13 @@ export class WiktionarySearchComponent implements OnInit {
 
   onSubmit(form) {
     this.submitted = true;
-    console.log("subimitted");
-    console.log(form);
-    const subscription = this.searchService.getDefinitions("en", "truck").subscribe((definitions: Object) => {
-      this.definitions = JSON.stringify(definitions);
-      console.log(this.definitions);
+    let term = form.form.value.searchterm;
+    let langCode = form.form.value.searchlanguage;
+    let startTime = new Date();
+    const subscription = this.searchService.getDefinitions(langCode, term).subscribe((definitions: []) => {
+      this.definitions = definitions;
+      let timeDiff = new Date().getTime() - startTime.getTime();
+      console.log("Time to retrieve definitions: ", timeDiff);
     });
   }
 }
