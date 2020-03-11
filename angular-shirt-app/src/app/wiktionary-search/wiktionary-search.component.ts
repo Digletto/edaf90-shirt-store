@@ -7,14 +7,27 @@ import { WiktionarySearchService } from '../wiktionary-search.service';
   styleUrls: ['./wiktionary-search.component.css']
 })
 export class WiktionarySearchComponent implements OnInit {
+  langs = {
+    'Svenska': 'sv',
+    'English': 'en',
+  };
+  defaultOption = "English";
+  lang: "en";
   definitions: Object;
+  submitted = false;
 
-  constructor(private wiktionarySearch: WiktionarySearchService) { }
+  constructor(private searchService: WiktionarySearchService) { }
 
   ngOnInit(): void {
-    let truckdefs = this.wiktionarySearch.getTruck();
-    const foo = this.wiktionarySearch.getTruck()
-        .subscribe((data: Object) => this.definitions = data);
   }
 
+  onSubmit(form) {
+    this.submitted = true;
+    console.log("subimitted");
+    console.log(form);
+    const subscription = this.searchService.getDefinitions("en", "truck").subscribe((definitions: Object) => {
+      this.definitions = JSON.stringify(definitions);
+      console.log(this.definitions);
+    });
+  }
 }

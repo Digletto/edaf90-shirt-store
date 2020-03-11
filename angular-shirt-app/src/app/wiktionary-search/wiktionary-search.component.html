@@ -1,14 +1,22 @@
-<form class="card card-body bg-light">
-	<div class="form-group row justify-content-between">
-		<label for="wiktionary-search-field" class="col-md-2 col-form-label text-right">Search term</label>
-		<input type="text" id="wiktionary-search-field" class="form-control col-md-7">
-		<input type="submit" class="btn btn-primary col-md-2">
-	</div>
-	<div id="results">
-                <ul>
-                        <!--<ng-container *ngFor="let definition of definitions | keyvalue">
-                                {{ definition.key }}
-                        </ng-container>-->
-                </ul>
-	</div>
+<form class="card card-body bg-light" (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
+  <div class="form-group row justify-content-between">
+    <label for="wiktionary-search-field" class="col-md-2 col-form-label text-right">Search term</label>
+    <input type="text" id="wiktionary-search-field" name="search-term" class="form-control col-md-5" ngModel>
+    <select name="search-language" class="form-control col-md-2" ngModel>
+      <option *ngFor="let option of langs | keyvalue" [value]="option.value">{{ option.key }}</option>
+    </select>
+    <input type="submit" class="btn btn-primary col-md-2">
+  </div>
+  <div id="results">
+    {{ definitions }}
+    <!--<ul>
+      <div class="row list-group">
+        <ng-container *ngFor="let langObj of definitions[lang + '']">
+          <a class="list-group-item list-group-item-action" data-toggle="list" *ngFor="let o of langObj.definitions">
+            {{ o.definition  }}
+          </a>
+        </ng-container>
+      </div>
+    </ul>-->
+  </div>
 </form>
