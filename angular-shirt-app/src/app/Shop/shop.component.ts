@@ -1,33 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
-import { WiktionarySearchComponent } from '../wiktionary-search/wiktionary-search.component';
+import {Shirt} from '../models/Shirt'
+
+ 
 
 
 @Component({
     selector: 'app-shop',
     templateUrl: './shop.component.html',
-    styleUrls: ['./shop.component.css'],
-    entryComponents: [
-      WiktionarySearchComponent
-    ]
+    styleUrls: ['./shop.component.css']
   })
 
   export class Shop implements OnInit{
     
     
-    
-    selectedShirt: String = "white";
+    selectedShirt: Shirt;
+    selectedShirtColor: string = "white";
+
 
     tshirts;
 
-    SelectedItem : {[key: string]: String} = {
-      color:  "white",
-      word: "",
-      form: "",
-      def: ""
-  }
 
     constructor(){
+      this.selectedShirt = new Shirt("white","Medium","","","",0);
+ 
 
     }
 
@@ -43,27 +39,30 @@ import { WiktionarySearchComponent } from '../wiktionary-search/wiktionary-searc
 
     
 
+    onChangeColor(event: any) {
+      this.selectedShirt.color= event.target.value;
+      this.selectedShirtColor=this.selectedShirt.color;
 
-    onChange(event: any) {
-      this.selectedShirt=event.target.value;
-      this.SelectedItem= {
-        color: this.selectedShirt
+    }
 
-      }
-
-
+    
+    onChangeSize(event: any) {
+      this.selectedShirt.size= event.target.value
+      
     }
 
     onCheckClick() {
 
 
       this.tshirts=JSON.parse(localStorage.getItem("tshirts"))
-      this.tshirts.push(this.SelectedItem)
+      this.tshirts.push(this.selectedShirt)
       localStorage.setItem("tshirts", JSON.stringify(this.tshirts))
       console.log(this.tshirts)
 
   }
+    
 
 
 
-}
+      
+  }

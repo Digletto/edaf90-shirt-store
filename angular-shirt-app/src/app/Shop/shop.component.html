@@ -23,7 +23,7 @@
               <div class="p-3">
                 <img
                   id="shirt"
-                  src="../../assets/t-shirt-pictures/{{selectedShirt}}_shirt.jpg"
+                  src="../../assets/t-shirt-pictures/{{selectedShirtColor}}_shirt.jpg"
                   alt="unable to show t-shirt"
        
 
@@ -37,8 +37,8 @@
             <div class="col-md-4">
 
                 <select
-              class="form-control d-inline  w-auto"
-              (change)="onChange($event)"
+              class="form-control d-inline  w-auto m-2"
+              (change)="onChangeColor($event)"
             >
               
               <option Selected value="white">White</option>
@@ -48,6 +48,19 @@
               <option value="yellow">Yellow</option>
               <option value="red">Red</option>
             </select>
+
+            <select
+            class="form-control d-inline  w-auto m-2"
+            (change)="onChangeSize($event)"
+          >
+            
+            <option value="Small">Small</option>
+            <option Selected value="Medium">Medium</option>
+            <option value="Large">Large</option>
+            <option value="X-Large">X-Large</option>
+          </select>
+
+
             </div>
             <div class="col-md-2"></div>
 
