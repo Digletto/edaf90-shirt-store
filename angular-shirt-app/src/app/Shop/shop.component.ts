@@ -22,7 +22,7 @@ import {Shirt} from '../models/Shirt'
 
 
     constructor(){
-      this.selectedShirt = new Shirt("white","Medium","","","",0);
+      this.selectedShirt = new Shirt("white","Medium","","","",1);
  
 
     }
@@ -37,7 +37,10 @@ import {Shirt} from '../models/Shirt'
 
 
 
-    
+    onChangeQuantity(event: any) {
+      this.selectedShirt.quantity= event.target.value;
+
+    }
 
     onChangeColor(event: any) {
       this.selectedShirt.color= event.target.value;
