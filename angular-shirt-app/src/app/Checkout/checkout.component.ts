@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {Shirt} from '../models/Shirt';
 
 @Component({
     selector: 'app-checkout',
@@ -13,56 +14,31 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
         //this.updatePrice();
     }
 
-    exampleItem : {[key: string]: string} = {
-        color: "red",
-        word: "surreptitious",
-        form: "adjective",
-        def: "kept secret especially because it would not be approved of",
-        size: "S",
-        cost: "89"
-    }
-
-    exampleItem2 : {[key: string]: string} = {
-        color: "black",
-        word: "verisimilitude",
-        form: "noun",
-        def: "the appearence of being true or real",
-        size: "M",
-        cost: "79"
-    }
+    exampleItem = new Shirt('M', 'red', 'surreptitious', 'Adjective', "kept secret especially because it would not be approved of", 1);
+    exampleItem2 = new Shirt('XS', 'black', 'verisismilitude', 'Noun', "the appearence of being true or real",2);
 
     tshirts;
     total;
-    //total = parseInt(this.exampleItem.cost) + parseInt(this.exampleItem2.cost);
-    /**if (exampleItem.def.length >= 50) {
-    *exampleItem.def = exampleItem.def.substring(0, 50) + '...';
-    *}
-    */  
-
-    shirtFiles : {[key: string]: string} = {
-        black : "../../assets/t-shirt-pictures/black_shirt.jpg",
-        blue : "../../assets/t-shirt-pictures/blue_shirt.jpg",
-        green : "../../assets/t-shirt-pictures/green_shirt.jpg",
-        white : "../../assets/t-shirt-pictures/white_shirt.jpg",
-        yellow : "../../assets/t-shirt-pictures/yellow_shirt.jpg",
-        red : "../../assets/t-shirt-pictures/red_shirt.jpg"       
-    }
 
     onPayClick(content) {
         this.modalService.open(content);
+    }
+
+    submitOrder() {
+        
     }
 
     updatePrice() {
         var shirt;
         var t = 0;
         for (shirt of this.tshirts) {
-            t += parseInt(shirt.cost);
+            t += parseFloat(shirt.cost);
         }
         this.total = t;
     }
 
     ngOnInit() {
-        //this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
+        this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
         //temp for testing
         this.tshirts = [this.exampleItem, this.exampleItem2];
 
