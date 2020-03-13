@@ -1,8 +1,7 @@
-//import { read } from 'fs';
-
 export class Shirt {
     size:string;
     color:string;
+    textColor:string;
     word:string;
     form:string;
     def:string;
@@ -11,9 +10,10 @@ export class Shirt {
     cost:number;
     imageDataUrl:string;
 
-    constructor(size:string, color:string, word:string, form:string, def:string, quantity:number, imageDataUrl:string) {
+    constructor(size:string, color:string, textColor:string, word:string, form:string, def:string, quantity:number, imageDataUrl:string) {
         this.size = size;
         this.color = color;
+        this.textColor = textColor;
         this.word = word;
         this.form = form;
         this.def = def;

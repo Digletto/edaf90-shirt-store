@@ -14,7 +14,7 @@ import { Shirt } from '../models/Shirt'
     selectedShirtColor: string = "white";
     selectedShirtSize: string = "S";
     selectedShirtQuantity: number = 1;
-
+    selectedShirtTextColor: string;
     selectedShirtTerm: string;
     selectedShirtPartOfSpeech: string;
     selectedShirtDefinition: string;
@@ -24,7 +24,7 @@ import { Shirt } from '../models/Shirt'
 
 
     constructor(){
-      this.selectedShirt = new Shirt("S", "white", "", "", "", 1, "");
+      this.selectedShirt = new Shirt("S", "white", "#000", "", "", "", 1, "");
     }
 
     /**
@@ -38,7 +38,7 @@ import { Shirt } from '../models/Shirt'
       var y = 240;
 
       context.font = '24pt Calibri';
-      context.fillStyle = '#333';
+      context.fillStyle = this.selectedShirtTextColor;
 
       var words = text.split(' ');
       var line = '';
@@ -66,8 +66,6 @@ import { Shirt } from '../models/Shirt'
 
       canvas.style.width = parent.offsetWidth + "px";
       canvas.style.height = ((1000 / 911) * parent.offsetWidth) + "px";
-      console.log(canvas.style.width);
-      console.log(canvas.style.height);
 
       var img = new Image();
       img.onload = () => {
@@ -111,6 +109,12 @@ import { Shirt } from '../models/Shirt'
       this.updateShirt();
     }
 
+    onChangeTextColor(event: any) {
+      this.selectedShirt.textColor = event.target.value;
+      this.selectedShirtTextColor = this.selectedShirt.textColor;
+
+      this.updateShirt();
+    }
 
     onChangeSize(event: any) {
       this.selectedShirt.size = event.target.value
@@ -121,6 +125,8 @@ import { Shirt } from '../models/Shirt'
       this.selectedShirtColor = "white";
       this.selectedShirtSize = "S";
       this.selectedShirtQuantity = 1;
+      this.selectedShirtTextColor = "#000";
+      this.updateShirt();
     }
 
     onSubmitForm() {

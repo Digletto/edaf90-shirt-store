@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-4">
 
-              <label for="shirtcolor">Choose colour</label>
+              <label for="shirtcolor">Choose shirt colour</label>
 
               <select id="shirtcolor" name="shirtcolor"
                 class="form-control d-inline  w-auto m-2"
@@ -37,6 +37,15 @@
                 <option value="yellow">Yellow</option>
                 <option value="red">Red</option>
               </select>
+
+              <label for="textcolor">Choose text color</label>
+              <input type="color"
+                class="form-control"
+                id="textcolor"
+                name="textcolor"
+                (change)="onChangeTextColor($event)"
+                [(ngModel)]="selectedShirtTextColor"
+              >
 
               <label for="shirtsize">Choose size</label>
 
