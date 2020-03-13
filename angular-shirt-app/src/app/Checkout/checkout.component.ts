@@ -45,6 +45,7 @@ import {Order} from '../models/Order';
             form.form.value.acode, 
             form.form.value.country);
         orders.push(order);
+        localStorage.setItem("orders", JSON.stringify(orders));
         localStorage.removeItem("tshirts");
         this.tshirts = [];
         this.total = 0;
@@ -71,7 +72,7 @@ import {Order} from '../models/Order';
         this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
 
         //temp for testing REMOVE WHEN SHOP IS WORKING
-        this.tshirts = [this.exampleItem, this.exampleItem2];
+        //this.tshirts = [this.exampleItem, this.exampleItem2];
 
         this.updatePrice();
     }
