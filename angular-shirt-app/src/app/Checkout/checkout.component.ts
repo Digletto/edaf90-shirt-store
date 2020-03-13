@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {Shirt} from '../models/Shirt';
+import {Order} from '../models/Order';
 
 @Component({
     selector: 'app-checkout',
@@ -15,17 +16,40 @@ import {Shirt} from '../models/Shirt';
     }
 
     exampleItem = new Shirt('M', 'red', 'surreptitious', 'Adjective', "kept secret especially because it would not be approved of", 1);
-    exampleItem2 = new Shirt('XS', 'black', 'verisismilitude', 'Noun', "the appearence of being true or real",2);
+    exampleItem2 = new Shirt('XS', 'black', 'verisimilitude', 'Noun', "the appearence of being true or real",2);
 
     tshirts;
     total;
 
+    fname;
+    lname;
+    email;
+    acode;
+    country;
+    street;
+    nbr;
+    city;
+
+    modal;
+
     onPayClick(content) {
-        this.modalService.open(content);
+        this.modal = this.modalService.open(content);
     }
 
-    submitOrder() {
-        
+    onSubmit(form) {
+        let orders = JSON.parse(localStorage.getItem("orders"));
+        let order = new Order(this.tshirts, 
+            form.form.value.email, 
+            form.form.value.street, 
+            form.form.value.city, 
+            form.form.value.acode, 
+            form.form.value.country);
+        orders.push(order);
+        localStorage.removeItem("tshirts");
+        this.tshirts = [];
+        this.total = 0;
+        console.log(form.form.value.email);
+        this.modal.close();
     }
 
     updatePrice() {
@@ -39,7 +63,8 @@ import {Shirt} from '../models/Shirt';
 
     ngOnInit() {
         this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
-        //temp for testing
+
+        //temp for testing REMOVE WHEN SHOP IS WORKING
         this.tshirts = [this.exampleItem, this.exampleItem2];
 
         this.updatePrice();

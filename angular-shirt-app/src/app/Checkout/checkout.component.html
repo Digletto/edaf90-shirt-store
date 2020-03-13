@@ -42,43 +42,42 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
-    <form onSubmit={submitOrder} ngNativeValidate #form>
-        <div>
-            <label>Name</label>
-            <input type="text" id="fname" required placeholder="First Name">
-            <input type="text" id="lname" required placeholder="Last Name">
-        </div>
-        <div>
-            <label>E-mail</label>
-            <input type="text" id="email" required>
-        </div>
-        <div>
-            <label>Address: </label>
+      <div class="modal-body">
+        <form (ngSubmit)=onSubmit(credForm) ngNativeValidate #credForm="ngForm">
             <div>
+                <label>Name</label>
+                <input type="text" placeholder="First Name" required [(ngModel)]="fname" name="firstName">
+                <input type="text" placeholder="Last Name" required [(ngModel)]="lname" name="lastName">
+            </div>
+            <div>
+                <label>E-mail</label>
+                <input type="text" id="email" name="email" required [(ngModel)]="email">
+            </div>
+            <div>
+                Address:
+                <br>
                 <div>
-                    <label>Street</label>
-                    <input type="text" id="street" required>
+                    Street
+                    <input type="text" name="street" required [(ngModel)]="street">
                 </div>
                 <div>
-                    <label>Nbr</label>
-                    <input type="text" id="streetnbr" required>
+                    Nbr
+                    <input type="text" id="streetnbr" required name="streetnbr" [(ngModel)]="nbr">
                 </div>
                 <div>
-                    <label>Country</label>
-                    <input type="text" id="country" required>
+                    Country
+                    <input type="text" id="country" required name="country" [(ngModel)]="country">
                 </div>
                 <div>
-                    <label>City</label>
-                    <input type="text" id="city" required>
+                    City
+                    <input type="text" id="city" name="city" required [(ngModel)]="city">
                 </div>
                 <div>
-                    <label>Area Code</label>
-                    <input type="text" id="acode" required>
+                    Area Code
+                    <input type="text" id="acode" name="acode" required [(ngModel)]="acode">
                 </div>
             </div>
-        </div>
-        <button type="submit" (click)="form.checkValidity()? modal.dismiss('Submit click') : null">Submit</button>
-    </form>
-  </div>
+            <input type="submit" class="btn btn-primary col-md-2" value="Submit">
+        </form>
+      </div>
 </ng-template>
