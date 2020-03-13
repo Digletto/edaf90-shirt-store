@@ -8,7 +8,7 @@ import { WiktionarySearchService } from '../wiktionary-search.service';
 })
 export class WiktionarySearchComponent implements OnInit {
 
-  @Output() messageEvent = new EventEmitter<string>();
+  @Output() messageEvent = new EventEmitter<{}>();
 
   langs = {
     'English': 'en',
@@ -31,7 +31,12 @@ export class WiktionarySearchComponent implements OnInit {
     }
 
     event.target.classList.add("active");
-    this.messageEvent.emit(event.target.textContent.trim());
+    console.log(event.target);
+    this.messageEvent.emit({
+      term: event.target.getAttribute("data-term"),
+      partOfSpeech: event.target.getAttribute("data-partOfSpeech"),
+      text: event.target.getAttribute("data-text"),
+    });
   }
 
   onSubmit(form) {

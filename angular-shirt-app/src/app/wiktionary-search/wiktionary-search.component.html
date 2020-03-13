@@ -9,8 +9,13 @@
   </div>
   <div id="results">
     <ul class="list-group" id="definition-results">
-      <li class="list-group-item list-group-item-action" *ngFor="let def of definitions" (click)="onDefinitionSelect($event)">
-        {{ def }}
+      <li class="list-group-item list-group-item-action"
+        *ngFor="let def of definitions"
+        [attr.data-term]="def.term"
+        [attr.data-partOfSpeech]="def.partOfSpeech"
+        [attr.data-text]="def.text"
+        (click)="onDefinitionSelect($event)">
+        {{ def.term }} ({{ def.partOfSpeech }}): {{ def.text }}
       </li>
     </ul>
   </div>

@@ -28,7 +28,11 @@ export class WiktionarySearchService {
       for(let definitionArea of response[langCode]) {
         for(let replyDefinition of definitionArea.definitions) {
           let text = replyDefinition.definition.replace(/<.*?>/g, '');
-          let definition = `${term} (${definitionArea.partOfSpeech}): ${text}`;
+          let definition = {
+            term: term,
+            partOfSpeech: definitionArea.partOfSpeech,
+            text: text
+          };
           definitions.push(definition);
         }
       }

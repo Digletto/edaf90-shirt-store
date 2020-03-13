@@ -16,7 +16,10 @@ import {Shirt} from '../models/Shirt'
     selectedShirtColor: string = "white";
     selectedShirtSize: string = "Small";
     selectedShirtQuantity: number = 1;
-    selectedShirtText: string;
+
+    selectedShirtTerm: string;
+    selectedShirtPartOfSpeech: string;
+    selectedShirtDefinition: string;
 
 
     tshirts;
@@ -35,7 +38,9 @@ import {Shirt} from '../models/Shirt'
     }
 
     receiveMessage(event) {
-      this.selectedShirtText = event;
+      this.selectedShirtTerm = event.term;
+      this.selectedShirtPartOfSpeech = event.partOfSpeech;
+      this.selectedShirtDefinition = event.text;
     }
 
     onChangeQuantity(event: any) {
@@ -44,8 +49,8 @@ import {Shirt} from '../models/Shirt'
     }
 
     onChangeColor(event: any) {
-      this.selectedShirt.color= event.target.value;
-      this.selectedShirtColor=this.selectedShirt.color;
+      this.selectedShirt.color = event.target.value;
+      this.selectedShirtColor = this.selectedShirt.color;
 
     }
 
@@ -62,6 +67,10 @@ import {Shirt} from '../models/Shirt'
     }
 
     onSubmitForm() {
+      this.selectedShirt.word = this.selectedShirtTerm;
+      this.selectedShirt.form = this.selectedShirtPartOfSpeech;
+      this.selectedShirt.def = this.selectedShirtDefinition;
+
       this.tshirts = JSON.parse(localStorage.getItem("tshirts"))
 
       this.tshirts.push(this.selectedShirt)

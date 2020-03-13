@@ -60,10 +60,16 @@
 
               <input id="shirtquantity" name="shirtquantity" class="form-control d-inline  w-25 m-2" type="number" min="1" max="200" step="1" oninput="validity.valid||(value='');" value="1"
               (change)="onChangeQuantity($event)" [(ngModel)]="selectedShirtQuantity">
+              <br>
 
-              <label for="shirttext" class="m-2">Shirt text</label>
+              <label for="shirtterm" class="m-2">Term defined</label>
+              <input id="shirtterm" name="shirtterm" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="selectedShirtTerm" disabled>
 
-              <input id="shirttext" name="shirttext" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="selectedShirtText">
+              <label for="shirtpartofspeech" class="m-2">Part of speech</label>
+              <input id="shirtpartofspeech" name="shirtpartofspeech" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="selectedShirtPartOfSpeech" disabled>
+
+              <label for="shirtdefinition" class="m-2">Definition</label>
+              <input id="shirtdefinition" name="shirtdefinition" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="selectedShirtDefinition" disabled>
 
               <input type="submit" class="btn btn-primary" value="Add to checkout">
             </div>
