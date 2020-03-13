@@ -1,13 +1,13 @@
 export class Shirt {
-  size:         string;
-  color:        string;
-  textColor:    string;
-  word:         string;
-  form:         string;
-  def:          string;
-  quantity:     number;
-  cost:         number; //the cost is per shirt no matter the quantity
-  imageDataUrl: string;
+  private size:         string;
+  private color:        string;
+  private textColor:    string;
+  private word:         string;
+  private form:         string;
+  private def:          string;
+          quantity:     number; //quantity not private due to coupling with Order.ts
+          cost:         number; //the cost is per shirt no matter the quantity
+  private imageDataUrl: string;
 
   constructor(size:string, color:string, textColor:string, word:string, form:string, def:string, quantity:number, imageDataUrl:string) {
     this.size = size;
@@ -40,13 +40,24 @@ export class Shirt {
       case "XXXL": this.cost += 48; break;
     }
 
-    let textlength = this.word + this.form + this.def
+    let textLength = 0;
+
+    if(this.word) {
+      textLength += this.word.length;
+    }
+
+    if(this.form) {
+      textLength += this.form.length;
+    }
+
+    if(this.def) {
+      textLength += this.def.length;
+    }
+
     let characterCost = 0.5;
 
-    this.cost += textlength.length*characterCost;
-  }
+    this.cost += textLength * characterCost;
 
-  price() {
-    return this.cost*this.quantity;
+    console.log("cost: ", this.cost);
   }
 }
