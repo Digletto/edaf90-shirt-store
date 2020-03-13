@@ -10,15 +10,16 @@ import {Order} from '../models/Order';
   })
 
   export class CheckoutComponent implements OnInit{
+
     
     constructor(private modalService: NgbModal) {
-        //this.updatePrice();
+        
     }
 
     exampleItem = new Shirt('M', 'red', 'surreptitious', 'Adjective', "kept secret especially because it would not be approved of", 1);
     exampleItem2 = new Shirt('XS', 'black', 'verisimilitude', 'Noun', "the appearence of being true or real",2);
 
-    tshirts;
+    tshirts = JSON.parse(localStorage.getItem("tshirts"));
     total;
 
     fname;
@@ -74,10 +75,10 @@ import {Order} from '../models/Order';
     }
 
     ngOnInit() {
+        
         this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
-
         //temp for testing REMOVE WHEN SHOP IS WORKING
-        //this.tshirts = [this.exampleItem, this.exampleItem2];
+        this.tshirts = [this.exampleItem, this.exampleItem2];
 
         this.updatePrice();
     }
