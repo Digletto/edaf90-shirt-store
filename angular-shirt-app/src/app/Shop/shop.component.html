@@ -13,7 +13,7 @@
 
         <app-wiktionary-search (messageEvent)="receiveMessage($event)"></app-wiktionary-search>
 
-        <form class="card card-body border bg-light p-5 m-1" #shirtForm="ngForm" (ngSubmit)="onSubmitForm()">
+        <form class="card card-body border bg-light p-5 m-1" (ngSubmit)="onSubmitForm()">
           <div class="row align-items-center text-center">
             <div class="col-md-1"></div>
             <div class="col-md-5">
@@ -24,11 +24,10 @@
             <div class="col-md-4">
 
               <label for="shirtcolor">Choose shirt colour</label>
-
               <select id="shirtcolor" name="shirtcolor"
                 class="form-control d-inline  w-auto m-2"
-                (change)="onChangeColor($event)"
-                [(ngModel)]="selectedShirtColor"
+                (change)="onChangeShirtColor($event)"
+                [(ngModel)]="shirtColor"
               >
                 <option Selected value="white">White</option>
                 <option value="black">Black</option>
@@ -44,15 +43,13 @@
                 id="textcolor"
                 name="textcolor"
                 (change)="onChangeTextColor($event)"
-                [(ngModel)]="selectedShirtTextColor"
+                [(ngModel)]="textColor"
               >
 
               <label for="shirtsize">Choose size</label>
-
               <select id="shirtsize" name="shirtsize"
                 class="form-control d-inline  w-auto m-2"
-                (change)="onChangeSize($event)"
-                [(ngModel)]="selectedShirtSize"
+                [(ngModel)]="size"
               >
                 <option value="S">Small</option>
                 <option Selected value="M">Medium</option>
@@ -61,19 +58,18 @@
               </select>
 
               <label for="shirtquantity">Choose  quantity</label>
-
               <input id="shirtquantity" name="shirtquantity" class="form-control d-inline  w-25 m-2" type="number" min="1" max="200" step="1" oninput="validity.valid||(value='');" value="1"
-              (change)="onChangeQuantity($event)" [(ngModel)]="selectedShirtQuantity">
+              [(ngModel)]="quantity">
               <br>
 
               <label for="shirtterm" class="m-2">Term defined</label>
-              <input id="shirtterm" name="shirtterm" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="selectedShirtTerm" disabled>
+              <input id="shirtterm" name="shirtterm" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="term" disabled>
 
               <label for="shirtpartofspeech" class="m-2">Part of speech</label>
-              <input id="shirtpartofspeech" name="shirtpartofspeech" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="selectedShirtPartOfSpeech" disabled>
+              <input id="shirtpartofspeech" name="shirtpartofspeech" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="partOfSpeech" disabled>
 
               <label for="shirtdefinition" class="m-2">Definition</label>
-              <input id="shirtdefinition" name="shirtdefinition" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="selectedShirtDefinition" disabled>
+              <input id="shirtdefinition" name="shirtdefinition" class="form-control d-inline w-500 m-2" type="text" [(ngModel)]="definitionText" disabled>
 
               <input type="submit" class="btn btn-primary" value="Add to checkout">
             </div>
