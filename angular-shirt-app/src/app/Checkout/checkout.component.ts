@@ -46,9 +46,7 @@ import {Order} from '../models/Order';
             form.form.value.country);
         orders.push(order);
         localStorage.setItem("orders", JSON.stringify(orders));
-        localStorage.removeItem("tshirts");
-        this.tshirts = [];
-        this.total = 0;
+        this.clearOrder();
         console.log(form.form.value.email);
         this.modal.close();
     }
@@ -66,6 +64,13 @@ import {Order} from '../models/Order';
         //console.log(event);
         shirt.quantity = event.target.value;
         this.updatePrice();
+    }
+
+    clearOrder() {
+        let tempArray = [];
+        localStorage.setItem("tshirts", JSON.stringify(tempArray));
+        this.tshirts = [];
+        this.total = 0;
     }
 
     ngOnInit() {

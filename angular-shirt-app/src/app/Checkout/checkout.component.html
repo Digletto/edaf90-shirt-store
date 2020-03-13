@@ -6,6 +6,8 @@
             <p class= "font-italic">Welcome to the checkout. Please edit your order and proceed to payment. </p>
         </div>
 
+        <button (click)="clearOrder()">Clear Order</button>
+
         <div class="orderItems" *ngFor="let shirt of tshirts; let i=index">
             <div class="well well-sm border bg-light p-2 m-1" >
                 <div>
