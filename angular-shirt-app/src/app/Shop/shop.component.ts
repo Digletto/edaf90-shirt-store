@@ -16,6 +16,7 @@ import {Shirt} from '../models/Shirt'
     selectedShirtColor: string = "white";
     selectedShirtSize: string = "Small";
     selectedShirtQuantity: number = 1;
+    selectedShirtText: string;
 
 
     tshirts;
@@ -33,7 +34,9 @@ import {Shirt} from '../models/Shirt'
 
     }
 
-
+    receiveMessage(event) {
+      this.selectedShirtText = event;
+    }
 
     onChangeQuantity(event: any) {
       this.selectedShirt.quantity= event.target.value;

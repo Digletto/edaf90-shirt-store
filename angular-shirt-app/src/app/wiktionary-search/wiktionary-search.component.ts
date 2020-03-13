@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WiktionarySearchService } from '../wiktionary-search.service';
 
 @Component({
@@ -7,13 +7,15 @@ import { WiktionarySearchService } from '../wiktionary-search.service';
   styleUrls: ['./wiktionary-search.component.css']
 })
 export class WiktionarySearchComponent implements OnInit {
+
+  @Output() messageEvent = new EventEmitter<string>();
+
   langs = {
     'English': 'en',
   };
 
   lang = "en";
   term: string;
-  selectedDefinition: string;
 
   definitions: [];
 
@@ -29,7 +31,7 @@ export class WiktionarySearchComponent implements OnInit {
     }
 
     event.target.classList.add("active");
-    this.selectedDefinition = event.target.textContent.trim();
+    this.messageEvent.emit(event.target.textContent.trim());
   }
 
   onSubmit(form) {
