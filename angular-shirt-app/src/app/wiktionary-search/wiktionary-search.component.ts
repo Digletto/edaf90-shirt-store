@@ -22,6 +22,16 @@ export class WiktionarySearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDefinitionSelect(event: any) {
+    let elems = document.querySelectorAll('#definition-results .active');
+    for(let n = 0; n < elems.length; n++) {
+      elems[n].classList.remove("active");
+    }
+
+    event.target.classList.add("active");
+    this.selectedDefinition = event.target.textContent.trim();
+  }
+
   onSubmit(form) {
     let term = form.form.value.searchterm;
     let langCode = form.form.value.searchlanguage;

@@ -8,11 +8,11 @@
     <input type="submit" class="btn btn-primary col-md-2">
   </div>
   <div id="results">
-    <div class="form-check">
-      <label class="form-check-label" *ngFor="let def of definitions">
-        <input type="radio" class="form-check-input" data-toggle="list">
+    {{ selectedDefinition }}
+    <ul class="list-group" id="definition-results">
+      <li class="list-group-item list-group-item-action" *ngFor="let def of definitions" (click)="onDefinitionSelect($event)">
         {{ def }}
-      </label>
-    </div>
+      </li>
+    </ul>
   </div>
 </form>
