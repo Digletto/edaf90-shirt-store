@@ -15,19 +15,19 @@ export class CheckoutComponent implements OnInit{
     this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
   }
 
-  tshirts;
-  total;
+  tshirts: [];
+  total:   number;
 
-  fname;
-  lname;
-  email;
-  acode;
-  country;
-  street;
-  nbr;
-  city;
+  fname:   string;
+  lname:   string;
+  email:   string;
+  acode:   string;
+  country: string;
+  street:  string;
+  nbr:     string;
+  city:    string;
 
-  modal;
+  modal:   any;
 
   onPayClick(content) {
     this.modal = this.modalService.open(content);

@@ -57,7 +57,5 @@ export class Shirt {
     let characterCost = 0.5;
 
     this.cost += textLength * characterCost;
-
-    console.log("cost: ", this.cost);
   }
 }

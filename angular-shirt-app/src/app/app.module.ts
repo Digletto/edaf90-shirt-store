@@ -12,8 +12,6 @@ import { CheckoutComponent } from './Checkout/checkout.component';
 import { Shop } from './Shop/shop.component';
 import { WiktionarySearchComponent } from './wiktionary-search/wiktionary-search.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,22 +31,10 @@ import { WiktionarySearchComponent } from './wiktionary-search/wiktionary-search
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule{ 
 
+export class AppModule{
   constructor() {
     localStorage.setItem("tshirts", JSON.stringify([]))
-
-
-
     localStorage.setItem("orders", JSON.stringify([]))
-
-
-
   }
-
-
-
-
-
-
 }
