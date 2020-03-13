@@ -5,7 +5,7 @@
     <select name="searchlanguage" class="form-control col-md-2" [(ngModel)]="lang">
       <option *ngFor="let option of langs | keyvalue" [value]="option.value">{{ option.key }}</option>
     </select>
-    <input type="submit" class="btn btn-primary col-md-2">
+    <input type="submit" class="btn btn-primary col-md-2" value="Search">
   </div>
   <div id="results">
     <ul class="list-group" id="definition-results">
