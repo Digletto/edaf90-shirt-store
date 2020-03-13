@@ -42,4 +42,8 @@ export class Shirt {
         this.cost += textlength.length*characterCost;
         console.log(this.cost);
     }
+
+    price() {
+        return this.cost*this.quantity;
+    }
 }

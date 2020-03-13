@@ -56,9 +56,15 @@ import {Order} from '../models/Order';
         var shirt;
         var t = 0;
         for (shirt of this.tshirts) {
-            t += parseFloat(shirt.cost);
+            t += shirt.price();
         }
         this.total = t;
+    }
+
+    updateQuantity(shirt, event) {
+        //console.log(event);
+        shirt.quantity = event.target.value;
+        this.updatePrice();
     }
 
     ngOnInit() {
