@@ -22,7 +22,7 @@ import {Shirt} from '../models/Shirt'
 
 
     constructor(){
-      this.selectedShirt = new Shirt("white","Medium","","","",1);
+      this.selectedShirt = new Shirt("Medium","white","","","",1);
  
 
     }
@@ -61,7 +61,7 @@ import {Shirt} from '../models/Shirt'
       this.tshirts.push(this.selectedShirt)
       localStorage.setItem("tshirts", JSON.stringify(this.tshirts))
       console.log(this.tshirts)
-
+    
   }
     
 
