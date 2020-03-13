@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import {Shirt} from '../models/Shirt'
 
- 
 
 
 @Component({
@@ -11,11 +10,12 @@ import {Shirt} from '../models/Shirt'
     styleUrls: ['./shop.component.css']
   })
 
-  export class Shop implements OnInit{
-    
-    
+  export class Shop implements OnInit {
+
     selectedShirt: Shirt;
     selectedShirtColor: string = "white";
+    selectedShirtSize: string = "Small";
+    selectedShirtQuantity: number = 1;
 
 
     tshirts;
@@ -23,12 +23,10 @@ import {Shirt} from '../models/Shirt'
 
     constructor(){
       this.selectedShirt = new Shirt("Medium","white","","","",1);
- 
-
     }
 
 
-    
+
 
     ngOnInit() {
 
@@ -48,24 +46,28 @@ import {Shirt} from '../models/Shirt'
 
     }
 
-    
+
     onChangeSize(event: any) {
       this.selectedShirt.size= event.target.value
-      
+
     }
 
-    onCheckClick() {
+    resetForm() {
+      this.selectedShirtColor = "white";
+      this.selectedShirtSize = "Small";
+      this.selectedShirtQuantity = 1;
+    }
 
+    onSubmitForm() {
+      this.tshirts = JSON.parse(localStorage.getItem("tshirts"))
 
-      this.tshirts=JSON.parse(localStorage.getItem("tshirts"))
       this.tshirts.push(this.selectedShirt)
+
       localStorage.setItem("tshirts", JSON.stringify(this.tshirts))
+
       console.log(this.tshirts)
-    
-  }
-    
 
+      this.resetForm();
+    }
 
-
-      
-  }
+}

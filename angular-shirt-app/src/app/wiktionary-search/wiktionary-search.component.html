@@ -8,7 +8,7 @@
     <input type="submit" class="btn btn-primary col-md-2">
   </div>
   <div id="results">
-    <div class="form-check" [(ngModel)]="selectedDefinition">
+    <div class="form-check">
       <label class="form-check-label" *ngFor="let def of definitions">
         <input type="radio" class="form-check-input" data-toggle="list">
         {{ term }} ({{ def.partOfSpeech }}): {{ def.definitionText }}
