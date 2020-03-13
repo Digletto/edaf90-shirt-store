@@ -53,7 +53,7 @@ export class CheckoutComponent implements OnInit{
     var shirt;
     var t = 0;
     for (shirt of this.tshirts) {
-        t += shirt.cost*shirt.quantity;
+      t += shirt.cost * shirt.quantity;
     }
     this.total = t;
   }
