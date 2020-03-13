@@ -1,4 +1,4 @@
-<form class="card card-body bg-light" (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
+<form class="card card-body border bg-light p-5 m-1" (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
   <div class="form-group row justify-content-between">
     <label for="wiktionary-search-field" class="col-md-2 col-form-label text-right">Search term</label>
     <input type="text" id="wiktionary-search-field" name="searchterm" class="form-control col-md-5" [(ngModel)]="term">
