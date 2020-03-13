@@ -42,6 +42,7 @@ import {Order} from '../models/Order';
         1)
      ], "daniel<3pesto@gmail.com", "Kämnärsvägen", "lund", "37", "Sweden");
       //this.orders = [order1, order2];
+      
       this.orders = JSON.parse(localStorage.getItem("orders"));
     }
     shirtFiles : {[key: string]: string} = {
