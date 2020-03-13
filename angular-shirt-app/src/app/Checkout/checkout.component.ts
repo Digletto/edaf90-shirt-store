@@ -13,13 +13,13 @@ import {Order} from '../models/Order';
 
     
     constructor(private modalService: NgbModal) {
-        
+        this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
     }
 
     exampleItem = new Shirt('M', 'red', 'surreptitious', 'Adjective', "kept secret especially because it would not be approved of", 1);
     exampleItem2 = new Shirt('XS', 'black', 'verisimilitude', 'Noun', "the appearence of being true or real",2);
 
-    tshirts = JSON.parse(localStorage.getItem("tshirts"));
+    tshirts;
     total;
 
     fname;
@@ -56,7 +56,7 @@ import {Order} from '../models/Order';
         var shirt;
         var t = 0;
         for (shirt of this.tshirts) {
-            t += shirt.price();
+            t += shirt.cost*shirt.quantity;
         }
         this.total = t;
     }
@@ -76,10 +76,9 @@ import {Order} from '../models/Order';
 
     ngOnInit() {
         
-        this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
         //temp for testing REMOVE WHEN SHOP IS WORKING
-        this.tshirts = [this.exampleItem, this.exampleItem2];
-
+        //this.tshirts = [this.exampleItem, this.exampleItem2];
+        console.log("init");
         this.updatePrice();
     }
   }

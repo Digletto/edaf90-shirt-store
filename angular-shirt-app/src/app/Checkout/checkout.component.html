@@ -27,7 +27,7 @@
                 Form: <span class=thin style="white-space: pre-line"><i>{{shirt.form}}</i></span><br>
                 Def: <span class=thin style="white-space: pre-line"><i>{{shirt.def}}</i></span><br>
                 Amount: <span class=thin style="white-space: pre-line"><i>{{shirt.quantity}}</i></span><br>
-                Price: <span class=thin>{{shirt.price()}}:-</span><br>
+                Price: <span class=thin>{{shirt.quantity*shirt.cost}}:-</span><br>
                 </div>
             </div>
             <input type="number" min="1" max="200" step="1" value="{{shirt.quantity}}" (change)="updateQuantity(shirt, $event)">
@@ -83,5 +83,5 @@
             </div>
             <input type="submit" class="btn btn-primary col-md-2" value="Submit">
         </form>
-      </div>
+    </div>
 </ng-template>
