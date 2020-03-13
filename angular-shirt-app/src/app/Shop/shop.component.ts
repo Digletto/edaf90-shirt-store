@@ -14,7 +14,7 @@ import {Shirt} from '../models/Shirt'
 
     selectedShirt: Shirt;
     selectedShirtColor: string = "white";
-    selectedShirtSize: string = "Small";
+    selectedShirtSize: string = "S";
     selectedShirtQuantity: number = 1;
 
     selectedShirtTerm: string;
@@ -26,7 +26,7 @@ import {Shirt} from '../models/Shirt'
 
 
     constructor(){
-      this.selectedShirt = new Shirt("Medium","white","","","",1);
+      this.selectedShirt = new Shirt("S","white","","","",1);
     }
 
 
@@ -62,7 +62,7 @@ import {Shirt} from '../models/Shirt'
 
     resetForm() {
       this.selectedShirtColor = "white";
-      this.selectedShirtSize = "Small";
+      this.selectedShirtSize = "S";
       this.selectedShirtQuantity = 1;
     }
 
