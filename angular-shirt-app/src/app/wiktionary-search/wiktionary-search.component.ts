@@ -16,7 +16,6 @@ export class WiktionarySearchComponent implements OnInit {
   selectedDefinition: string;
 
   definitions: [];
-  submitted = false;
 
   constructor(private searchService: WiktionarySearchService) { }
 
@@ -24,7 +23,6 @@ export class WiktionarySearchComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.submitted = true;
     let term = form.form.value.searchterm;
     let langCode = form.form.value.searchlanguage;
     let startTime = new Date();
