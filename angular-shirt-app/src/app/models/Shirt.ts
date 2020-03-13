@@ -9,8 +9,9 @@ export class Shirt {
     quantity:number;
     //the cost is per shirt no matter the quantity
     cost:number;
+    imageDataUrl:string;
 
-    constructor(size:string, color:string, word:string, form:string, def:string, quantity:number) {
+    constructor(size:string, color:string, word:string, form:string, def:string, quantity:number, imageDataUrl:string) {
         this.size = size;
         this.color = color;
         this.word = word;
@@ -18,6 +19,7 @@ export class Shirt {
         this.def = def;
         this.quantity = quantity;
         this.cost = 0;
+        this.imageDataUrl = imageDataUrl;
         //in case one wants different costs for different colors, sizes, textlengths, etc
         switch (this.color) {
             case "white": this.cost = 3; break;

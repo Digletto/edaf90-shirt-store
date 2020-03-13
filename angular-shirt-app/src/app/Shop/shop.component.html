@@ -18,12 +18,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-5">
               <div class="p-3">
-                <img
-                  id="shirt"
-                  src="../../assets/t-shirt-pictures/{{selectedShirtColor}}_shirt.jpg"
-                  alt="unable to show t-shirt"
-                  class="img-thumbnail img-fluid"
-                />
+                <canvas id="myCanvas" width=640 height=480 ></canvas>
               </div>
             </div>
             <div class="col-md-4">
@@ -50,10 +45,10 @@
                 (change)="onChangeSize($event)"
                 [(ngModel)]="selectedShirtSize"
               >
-                <option value="Small">Small</option>
-                <option Selected value="Medium">Medium</option>
-                <option value="Large">Large</option>
-                <option value="X-Large">X-Large</option>
+                <option value="S">Small</option>
+                <option Selected value="M">Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">X-Large</option>
               </select>
 
               <label for="shirtquantity">Choose  quantity</label>
@@ -90,8 +85,6 @@
         </form>
 
     </div>
-
-
 
 
 

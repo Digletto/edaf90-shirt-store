@@ -16,8 +16,18 @@
             <ul *ngFor="let shirt of order.shirts">
                 Color: <span class=thin>{{shirt.color}}</span>&nbsp;&nbsp;&nbsp;
                 <img
+                    *ngIf="shirt.imageDataUrl == ''"
                     id="shirt"
                     src={{shirtFiles[shirt.color]}}
+                    alt="unable to show t-shirt"
+                    width="5%"
+                    height="5%"
+                    class="img-thumbnail"
+                />
+                <img
+                    *ngIf="shirt.imageDataUrl != ''"
+                    id="shirt"
+                    src="{{ shirt.imageDataUrl }}"
                     alt="unable to show t-shirt"
                     width="5%"
                     height="5%"

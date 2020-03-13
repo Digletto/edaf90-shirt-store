@@ -6,14 +6,24 @@
             <p class= "font-italic">Welcome to the checkout. Please edit your order and proceed to payment. </p>
         </div>
 
-        <button (click)="clearOrder()">Clear Order</button>
+        <button class="btn btn-primary" (click)="clearOrder()">Clear Order</button>
 
         <div class="orderItems" *ngFor="let shirt of tshirts; let i=index">
             <div class="well well-sm border bg-light p-2 m-1" >
                 <div>
                 <img
+                    *ngIf="shirt.imageDataUrl == ''"
                     id={{i}}
                     src="../../assets/t-shirt-pictures/{{shirt.color}}_shirt.jpg"
+                    alt="unable to show t-shirt"
+                    width="10%"
+                    height="10%"
+                    class="img-thumbnail"
+                />
+                <img
+                    *ngIf="shirt.imageDataUrl != ''"
+                    id={{i}}
+                    src="{{ shirt.imageDataUrl }}"
                     alt="unable to show t-shirt"
                     width="10%"
                     height="10%"
@@ -36,7 +46,7 @@
     <ul>
         Total: <span class=thin>{{total}}</span>:-<br>
     </ul>
-    <button (click)="onPayClick(payformModal)">Pay!</button>
+    <button class="btn btn-primary" (click)="onPayClick(payformModal)">Pay!</button>
 </div>
 
 <ng-template #payformModal let-modal>

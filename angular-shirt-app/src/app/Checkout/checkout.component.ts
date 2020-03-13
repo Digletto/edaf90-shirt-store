@@ -16,8 +16,8 @@ import {Order} from '../models/Order';
         this.tshirts = JSON.parse(localStorage.getItem("tshirts"));
     }
 
-    exampleItem = new Shirt('M', 'red', 'surreptitious', 'Adjective', "kept secret especially because it would not be approved of", 1);
-    exampleItem2 = new Shirt('XS', 'black', 'verisimilitude', 'Noun', "the appearence of being true or real",2);
+    exampleItem = new Shirt('M', 'red', 'surreptitious', 'Adjective', "kept secret especially because it would not be approved of", 1, "");
+    exampleItem2 = new Shirt('XS', 'black', 'verisimilitude', 'Noun', "the appearence of being true or real", 2, "");
 
     tshirts;
     total;
